@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+/* CENTRIRANJE */
+main {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* HEADER */
+header {
+    background: #111;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* NAVIGACIJA */
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* LAYOUT */
+.container {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    align-items: flex-start;
+}
+
+/* TABLICA VEĆI DIO */
+section {
+    flex: 2;
+    justify-content: center;
+}
+
+/* SLIKA */
+aside {
+    flex: 2;
+    max-width: 600px;
+}
+
+/* TABLICA */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background: white;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+th {
+    background: #3498db;
+    color: white;
+}
+
+/* SLIKA */
+aside img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* SEKCIJE */
+.main-section, article {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* STIL ZA GUMB */
+.cta {
+    text-align: center;
+    padding: 20px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* HOVER EFEKT */
+.btn-primary:hover {
+    background-color: white;
+    color: #3498db;
+    border: 2px solid #3498db;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    /* vertikalno */
+    .container {
+        flex-direction: column;
+    }
+
+    section {
+        order: 1;
+    }
+
+    aside {
+        order: 2;
+        max-width: 100%;
+    }
+
+    /* navigacija u stupcu */
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

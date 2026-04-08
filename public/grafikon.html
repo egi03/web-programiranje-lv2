@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Vizualizacija podataka o energiji pjesama pomoću CSS-only grafikona.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_grafikon.css">
+    <title>Grafikon Energije Pjesama</title>
+</head>
+<body>
+
+<header>
+    <h1>Energija Pjesama</h1>
+    <nav aria-label="Glavna navigacija">
+        <ul class="nav-menu">
+            <li><a href="/">Početna</a></li>
+            <li><a href="/grafikon">Grafikon</a></li>
+            <li><a href="/slike">Galerija</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="chart-section">
+        <h2>Vizualizacija energije pjesama</h2>
+
+        <div class="charts-flex-container">
+            <div class="chart-box">
+                <h3>Kružni prikaz</h3>
+                <div class="pie-chart" role="img" aria-label="Kružni grafikon energije"></div>
+            </div>
+
+            <div class="chart-box">
+                <h3>Stupčasti prikaz</h3>
+                <div class="bar-chart" role="img" aria-label="Stupčasti grafikon energije">
+                    <div class="bar high" style="--height: 92%;" data-value="92%"></div>
+                    <div class="bar medium" style="--height: 65%;" data-value="65%"></div>
+                    <div class="bar low" style="--height: 40%;" data-value="40%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item"><span class="box high-bg"></span> Visoka</div>
+            <div class="legend-item"><span class="box medium-bg"></span> Srednja </div>
+            <div class="legend-item"><span class="box low-bg"></span> Niska </div>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>

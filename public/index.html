@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- SEO: opis stranice -->
+    <meta name="description" content="Analiza popularnih pjesama.">
+
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Analiza pjesama</title>
+</head>
+
+<body>
+
+<header>
+    <h1>Analiza pjesama</h1>
+
+    <!-- JEDNOSTAVNA NAVIGACIJA -->
+    <nav aria-label="Glavna navigacija">
+        <ul class="nav-menu">
+            <li><a href="/">Početna</a></li>
+            <li><a href="/grafikon">Grafikon</a></li>
+            <li><a href="/slike">Galerija</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <div class="container">
+
+        <!-- TABLICA -->
+        <section>
+            <h2>Top pjesme</h2>
+
+            <table>
+                <tr>
+                    <th>Pjesma</th>
+                    <th>Izvođač</th>
+                    <th>Godina</th>
+                    <th>Energy</th>
+                    <th>Tempo</th>
+                </tr>
+
+                <tr><td>Mr. Brightside</td><td>The Killers</td><td>2004</td><td>0.918</td><td>148</td></tr>
+                <tr><td>Wonderwall</td><td>Oasis</td><td>2006</td><td>0.892</td><td>174</td></tr>
+                <tr><td>Come as You Are</td><td>Nirvana</td><td>1991</td><td>0.826</td><td>120</td></tr>
+                <tr><td>Take Me Out</td><td>Franz Ferdinand</td><td>2004</td><td>0.664</td><td>104</td></tr>
+                <tr><td>Creep</td><td>Radiohead</td><td>2008</td><td>0.430</td><td>91</td></tr>
+                <tr><td>Feel Good Inc.</td><td>Gorillaz</td><td>2010</td><td>0.720</td><td>138</td></tr>
+                <tr><td>Chop Suey!</td><td>SOAD</td><td>2008</td><td>0.925</td><td>127</td></tr>
+            </table>
+        </section>
+
+        <!-- SLIKA -->
+        <aside aria-label="Slika koncerta">
+            <picture>
+                <source media="(max-width: 768px)" 
+                        srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Coms_concert.jpg/960px-Coms_concert.jpg">
+
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Muse_in_Sydney.jpg/1280px-Muse_in_Sydney.jpg" 
+                     alt="Koncert s publikom i bendom">
+            </picture>
+        </aside>
+
+    </div>
+
+    <!-- OPIS -->
+    <section class="main-section">
+        <h2>O projektu</h2>
+        <p>Ova stranica prikazuje analizu pjesama koristeći HTML i CSS.</p>
+    </section>
+
+    <!-- ČLANAK -->
+    <article>
+        <h2>Trendovi</h2>
+        <p>Pjesme često imaju visoku energiju i brži tempo.</p>
+    </article>
+
+    <!-- JEDNOSTAVNI ELEMENT -->
+    <div class="cta">
+        <p>Uživaj u glazbi</p>
+        <a href="#" class="btn-primary">Saznaj više</a>
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Web programiranje</p>
+</footer>
+
+</body>
+</html>

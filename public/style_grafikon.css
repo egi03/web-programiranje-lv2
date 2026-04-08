@@ -1,0 +1,171 @@
+:root {
+    --high: #3498db;
+    --medium: #2ecc71;
+    --low: #f1c40f;
+    --dark: #111;
+    --bg: #f4f4f4;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: #333;
+}
+
+header {
+    background-color: var(--dark);
+    color: var(--white);
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 15px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--high);
+}
+
+/* SEKCIJA S GRAFIKONIMA */
+.chart-section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.charts-flex-container {
+    display: flex;
+    flex-direction: row;      /* Vodoravno na desktopu */
+    justify-content: center;   /* Centriranje oba boxa */
+    align-items: flex-start;  /* Poravnanje po vrhu */
+    gap: 40px;
+    flex-wrap: wrap;           /* Prebacivanje u novi red na mobitelu */
+    margin: 30px 0;
+}
+
+/* POJEDINAČNA KUTIJA (Centrira sadržaj unutar sebe) */
+.chart-box {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* Centriranje naslova i grafikona */
+    min-width: 300px;
+    flex: 1;                  /* Da kutije budu slične širine */
+    max-width: 400px;
+}
+
+.chart-box h3 {
+    margin-bottom: 25px;
+}
+
+/*  PIE CHART */
+.pie-chart {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--high) 0% 50%,
+        var(--medium) 50% 80%,
+        var(--low) 80% 100%
+    );
+    animation: growCircle 1.5s ease-in-out;
+    transition: transform 0.3s;
+}
+
+.pie-chart:hover {
+    transform: scale(1.05);
+}
+
+/* BAR CHART */
+.bar-chart {
+    display: flex;
+    align-items: flex-end;    /* Stupci rastu s dna */
+    justify-content: center;
+    width: 220px;
+    height: 220px;
+    border-bottom: 3px solid var(--dark);
+    gap: 15px;
+    padding-bottom: 5px;
+}
+
+.bar {
+    width: 45px;
+    background-color: var(--high);
+    height: 0;                /* Početno za animaciju */
+    position: relative;
+    animation: growBar 1.5s ease-out forwards;
+}
+
+.bar.medium { background-color: var(--medium); }
+.bar.low { background-color: var(--low); }
+
+.legend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.box {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+}
+
+.high-bg { background-color: var(--high); }
+.medium-bg { background-color: var(--medium); }
+.low-bg { background-color: var(--low); }
+
+/* ANIMACIJE */
+@keyframes growCircle {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes growBar {
+    from { height: 0; }
+    to { height: var(--height); }
+}
+
+/* RESPONZIVNOST */
+@media (max-width: 768px) {
+    .charts-flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .chart-box {
+        width: 100%;
+        max-width: 90%;
+    }
+}
