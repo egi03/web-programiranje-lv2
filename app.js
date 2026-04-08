@@ -10,12 +10,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // 1. Ruta za početnu stranicu (index.html)
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // 2. Ruta za grafikon
 app.get('/grafikon', (req, res) => {
-    res.sendFile(path.join(__dirname, 'grafikon.html'));
+    res.sendFile(path.join(__dirname, 'public', 'grafikon.html'));
 });
 
 // 3. Ruta za dinamičku galeriju (EJS)
