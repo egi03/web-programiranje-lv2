@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+
     <!-- SEO: opis stranice -->
     <meta name="description" content="Analiza popularnih pjesama.">
 
@@ -31,28 +34,77 @@
 
 <main>
 
+    <section id="playlista-sekcija" style="margin-top: 30px; border: 1px solid #ccc; padding: 15px;">
+        <h2>Moja Playlista (<span id="brojac-pjesama">0</span>)</h2>
+        <ul id="lista-playlist" style="list-style: none; padding: 0;">
+            </ul>
+        <button id="potvrdi-playlistu" style="display:none; padding: 10px; background: green; color: white; border: none; cursor: pointer;">
+            Potvrdi playlistu
+        </button>
+    </section>
+
+
     <div class="container">
+       <section>
+            <h2>Pretraživanje i filtriranje</h2>
+            <div style="margin-bottom: 20px;">
+                <input type="text" id="pretraga" placeholder="Pretraži po izvođaču ili pjesmi...">
+                
+                <select id="filter-mood">
+                    <option value="sve">Sva raspoloženja</option>
+                    <option value="Aggressive">Aggressive</option>
+                    <option value="Anthemic">Anthemic</option>
+                    <option value="Cheerful">Cheerful</option>
+                    <option value="Confident">Confident</option>
+                    <option value="Danceable">Danceable</option>
+                    <option value="Dark">Dark</option>
+                    <option value="Determined">Determined</option>
+                    <option value="Dramatic">Dramatic</option>
+                    <option value="Dreamy">Dreamy</option>
+                    <option value="Emotional">Emotional</option>
+                    <option value="Empowering">Empowering</option>
+                    <option value="Energetic">Energetic</option>
+                    <option value="Festive">Festive</option>
+                    <option value="Funky">Funky</option>
+                    <option value="Gritty">Gritty</option>
+                    <option value="Groovy">Groovy</option>
+                    <option value="Happy">Happy</option>
+                    <option value="Inspirational">Inspirational</option>
+                    <option value="Intense">Intense</option>
+                    <option value="Melancholic">Melancholic</option>
+                    <option value="Moody">Moody</option>
+                    <option value="Passionate">Passionate</option>
+                    <option value="Powerful">Powerful</option>
+                    <option value="Relaxed">Relaxed</option>
+                    <option value="Romantic">Romantic</option>
+                    <option value="Serious">Serious</option>
+                    <option value="Summer Vibes">Summer Vibes</option>
+                    <option value="Uplifting">Uplifting</option>
+                    <option value="Wild">Wild</option>
+                </select>
+            </div>
 
-        <!-- TABLICA -->
-        <section>
-            <h2>Top pjesme</h2>
+            <div style="margin-bottom: 20px;">
+                <label>Godina od:</label>
+                <input type="number" id="godina-od" placeholder="1950">
+                
+                <label>Godina do:</label>
+                <input type="number" id="godina-do" placeholder="2026">
+            </div>
 
-            <table>
-                <tr>
-                    <th>Pjesma</th>
-                    <th>Izvođač</th>
-                    <th>Godina</th>
-                    <th>Energy</th>
-                    <th>Tempo</th>
-                </tr>
-
-                <tr><td>Mr. Brightside</td><td>The Killers</td><td>2004</td><td>0.918</td><td>148</td></tr>
-                <tr><td>Wonderwall</td><td>Oasis</td><td>2006</td><td>0.892</td><td>174</td></tr>
-                <tr><td>Come as You Are</td><td>Nirvana</td><td>1991</td><td>0.826</td><td>120</td></tr>
-                <tr><td>Take Me Out</td><td>Franz Ferdinand</td><td>2004</td><td>0.664</td><td>104</td></tr>
-                <tr><td>Creep</td><td>Radiohead</td><td>2008</td><td>0.430</td><td>91</td></tr>
-                <tr><td>Feel Good Inc.</td><td>Gorillaz</td><td>2010</td><td>0.720</td><td>138</td></tr>
-                <tr><td>Chop Suey!</td><td>SOAD</td><td>2008</td><td>0.925</td><td>127</td></tr>
+            <h2>Popis pjesama</h2>
+            <table id="glazba-tablica">
+                <thead>
+                    <tr>
+                        <th>Izvođač</th>
+                        <th>Pjesma</th>
+                        <th>Godina</th>
+                        <th>Tempo</th>
+                        <th>Raspoloženje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
             </table>
         </section>
 
@@ -92,6 +144,8 @@
 <footer>
     <p>&copy; 2026 Web programiranje</p>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
